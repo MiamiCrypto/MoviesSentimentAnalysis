@@ -4,7 +4,7 @@ from textblob import TextBlob  # Replace with your model as necessary
 # Streamlit page configuration
 st.set_page_config(page_title="Movie Review Sentiment Analysis", page_icon="🎬")
 
-st.title('Movie Review Sentiment Analysis')
+#st.title('Movie Review Sentiment Analysis')
 
 # Display an image from a file with adjustable size
 st.subheader("Movie Revenue Prediction")
