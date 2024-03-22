@@ -7,7 +7,7 @@ from textblob import TextBlob  # Replace with your model as necessary
 st.title('Movie Review Sentiment Analysis')
 
 # Display an image from a file with adjustable size
-st.subheader("Movie Revenue Prediction")
+#st.subheader("Movie Revenue Prediction")
 #image_size = st.slider("Select the image size", 100, 500, 300)  # min_value, max_value, default_value
 st.image("MarvelvDC.png",
          width=500,
