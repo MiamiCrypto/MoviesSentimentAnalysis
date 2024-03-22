@@ -9,7 +9,7 @@ st.title('Movie Review Sentiment Analysis')
 # Display an image from a file with adjustable size
 st.subheader("Movie Revenue Prediction")
 image_size = st.slider("Select the image size", 100, 500, 300)  # min_value, max_value, default_value
-st.image("https://raw.githubusercontent.com/your_username/your_repository/main/path_to/Aiface3.png",
+st.image("MarvelvDC.png",
          width=image_size,
          caption="Predict your favorite movie's revenue")
 
@@ -36,3 +36,4 @@ if st.button('Analyze Sentiment'):
         # Display the sentiment color, emoji, and score
         st.markdown(f'<h1 style="color: {color};">{emoji} Sentiment Score: {sentiment_score:.2f}</h1>',
                     unsafe_allow_html=True)
+
