@@ -8,10 +8,10 @@ st.title('Movie Review Sentiment Analysis')
 
 # Display an image from a file with adjustable size
 st.subheader("Movie Revenue Prediction")
-image_size = st.slider("Select the image size", 100, 500, 300)  # min_value, max_value, default_value
+#image_size = st.slider("Select the image size", 100, 500, 300)  # min_value, max_value, default_value
 st.image("MarvelvDC.png",
-         width=image_size,
-         caption="Predict your favorite movie's revenue")
+         width=500,
+         caption="How do the people really feel about the movie?")
 
 # Text input from the user for sentiment analysis
 user_input = st.text_area("Enter your movie review")
