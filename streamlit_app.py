@@ -1,29 +1,26 @@
 import streamlit as st
-import pickle
+from textblob import TextBlob  # Assuming you're using TextBlob for sentiment analysis; replace with your model as necessary
 
-# Load the sentiment analysis model
-with open('SA_model.pkl', 'rb') as file:
-    model = pickle.load(file)
-
-def predict_sentiment(text):
-    """Predicts the sentiment of the given text."""
-    prediction = model.predict([text])
-    # Assuming the prediction returns an array with [0] for negative and [1] for positive sentiment
-    sentiment = "Positive" if prediction[0] == 1 else "Negative"
-    return sentiment
-
-# Streamlit application UI
-st.title('Sentiment Analysis Tool')
+st.title('Movie Review Sentiment Analysis')
 
 # Text input from the user
-user_input = st.text_area("Enter text for sentiment analysis", "")
+user_input = st.text_area("Enter your movie review")
 
-if st.button('Analyze'):
-    if user_input:
-        # Predict sentiment
-        result = predict_sentiment(user_input)
-        st.write(f"Sentiment: {result}")
+# Perform sentiment analysis in real-time
+if user_input:
+    sentiment = TextBlob(user_input).sentiment
+    sentiment_score = sentiment.polarity  # Range from -1 to 1 where -1 is very negative and 1 is very positive
+
+    # Determine sentiment color and emoji
+    if sentiment_score > 0.1:  # Thresholds can be adjusted
+        color = 'green'
+        emoji = '🙂'
+    elif sentiment_score < -0.1:
+        color = 'red'
+        emoji = '🙁'
     else:
-        st.write("Please enter some text to analyze.")
+        color = 'yellow'
+        emoji = '😐'
 
-# Instructions to run: Save this script as app.py and run it with the command `streamlit run app.py`.
+    # Display the sentiment color and emoji
+    st.markdown(f'<h1 style="color: {color};">{emoji} Sentiment Score: {sentiment_score:.2f}</h1>', unsafe_allow_html=True)
