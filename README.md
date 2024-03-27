@@ -3,7 +3,8 @@
 ⬆️ (Replace above with your app's name)
 ```
 
-Description of the app ...
+This application predicts the sentiment of different movie reviews based on data from an IMBD dataset found in Kaggle
+https://www.kaggle.com/code/lakshmi25npathi/sentiment-analysis-of-imdb-movie-reviews/notebook
 
 ## Demo App
 
